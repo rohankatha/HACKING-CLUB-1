@@ -1,0 +1,139 @@
+  1           0 LOAD_CONST               0 (0)
+              2 LOAD_CONST               1 (None)
+              4 IMPORT_NAME              0 (random)
+              6 STORE_NAME               0 (random)
+
+  4           8 BUILD_LIST               0
+             10 LOAD_CONST               2 (('Checkers', 'Tabletennis', 'Cricket', 'Soccer', 'Badminton', 'Volleyball', 'Chess', 'Carromboard'))
+             12 LIST_EXTEND              1
+             14 STORE_NAME               1 (test_list)
+
+  8          16 BUILD_LIST               0
+             18 LOAD_CONST               3 ((72, 111, 99, 107, 101, 121))
+             20 LIST_EXTEND              1
+             22 STORE_NAME               2 (flag)
+
+  9          24 LOAD_CONST               4 (<code object lts at 0x558086fa1810, file "example.py", line 9>)
+             26 LOAD_CONST               5 ('lts')
+             28 MAKE_FUNCTION            0
+             30 STORE_NAME               3 (lts)
+
+ 21          32 LOAD_NAME                3 (lts)
+             34 LOAD_NAME                2 (flag)
+             36 CALL_FUNCTION            1
+             38 STORE_NAME               4 (K)
+
+ 29          40 LOAD_CONST               6 (<code object print_flag at 0x558086fa16a0, file "example.py", line 29>)
+             42 LOAD_CONST               7 ('print_flag')
+             44 MAKE_FUNCTION            0
+             46 STORE_NAME               5 (print_flag)
+
+ 37          48 NOP
+
+ 38     >>   50 LOAD_NAME                0 (random)
+             52 LOAD_METHOD              6 (choice)
+             54 LOAD_CONST               9 (<code object <listcomp> at 0x558086f322d0, file "example.py", line 38>)
+             56 LOAD_CONST              10 ('<listcomp>')
+             58 MAKE_FUNCTION            0
+             60 LOAD_NAME                1 (test_list)
+             62 GET_ITER
+             64 CALL_FUNCTION            1
+             66 CALL_METHOD              1
+             68 STORE_NAME               7 (res)
+
+ 39          70 LOAD_NAME                8 (input)
+             72 LOAD_CONST              11 ('Enter your input : ')
+             74 CALL_FUNCTION            1
+             76 STORE_NAME               9 (text)
+
+ 40          78 LOAD_NAME                9 (text)
+             80 LOAD_NAME                4 (K)
+             82 COMPARE_OP               2 (==)
+             84 POP_JUMP_IF_FALSE       48 (to 96)
+
+ 41          86 LOAD_NAME                5 (print_flag)
+             88 CALL_FUNCTION            0
+             90 POP_TOP
+
+ 42          92 LOAD_CONST               1 (None)
+             94 RETURN_VALUE
+
+ 44     >>   96 LOAD_NAME               10 (print)
+             98 LOAD_CONST              12 ('Try again Maybe You chose  ')
+            100 LOAD_NAME                7 (res)
+            102 BINARY_ADD
+            104 CALL_FUNCTION            1
+            106 POP_TOP
+
+ 37         108 JUMP_ABSOLUTE           25 (to 50)
+
+Disassembly of <code object lts at 0x558086fa1810, file "example.py", line 9>:
+ 12           0 LOAD_CONST               1 ('')
+              2 STORE_FAST               1 (str1)
+
+ 15           4 LOAD_FAST                0 (s)
+              6 GET_ITER
+        >>    8 FOR_ITER                 8 (to 26)
+             10 STORE_FAST               2 (ele)
+
+ 16          12 LOAD_FAST                1 (str1)
+             14 LOAD_GLOBAL              0 (chr)
+             16 LOAD_FAST                2 (ele)
+             18 CALL_FUNCTION            1
+             20 INPLACE_ADD
+             22 STORE_FAST               1 (str1)
+             24 JUMP_ABSOLUTE            4 (to 8)
+
+ 19     >>   26 LOAD_FAST                1 (str1)
+             28 RETURN_VALUE
+
+Disassembly of <code object print_flag at 0x558086fa16a0, file "example.py", line 29>:
+ 30           0 BUILD_LIST               0
+              2 LOAD_CONST               1 ((116, 97, 109, 98, 111, 108, 97, 99, 116, 102, 123, 119, 51, 102, 53, 98, 57, 104, 56, 125))
+              4 LIST_EXTEND              1
+              6 STORE_FAST               0 (flag)
+
+ 31           8 LOAD_CONST               2 (0)
+             10 STORE_FAST               1 (i)
+
+ 32          12 LOAD_FAST                1 (i)
+             14 LOAD_CONST               3 (20)
+             16 COMPARE_OP               0 (<)
+             18 POP_JUMP_IF_FALSE       28 (to 56)
+
+ 33     >>   20 LOAD_GLOBAL              0 (print)
+             22 LOAD_GLOBAL              1 (chr)
+             24 LOAD_FAST                0 (flag)
+             26 LOAD_FAST                1 (i)
+             28 BINARY_SUBSCR
+             30 CALL_FUNCTION            1
+             32 CALL_FUNCTION            1
+             34 POP_TOP
+
+ 34          36 LOAD_FAST                1 (i)
+             38 LOAD_CONST               4 (1)
+             40 INPLACE_ADD
+             42 STORE_FAST               1 (i)
+
+ 32          44 LOAD_FAST                1 (i)
+             46 LOAD_CONST               3 (20)
+             48 COMPARE_OP               0 (<)
+             50 POP_JUMP_IF_TRUE        10 (to 20)
+             52 LOAD_CONST               0 (None)
+             54 RETURN_VALUE
+        >>   56 LOAD_CONST               0 (None)
+             58 RETURN_VALUE
+
+Disassembly of <code object <listcomp> at 0x558086f322d0, file "example.py", line 38>:
+ 38           0 BUILD_LIST               0
+              2 LOAD_FAST                0 (.0)
+        >>    4 FOR_ITER                 8 (to 22)
+              6 STORE_FAST               1 (ele)
+              8 LOAD_FAST                1 (ele)
+             10 LOAD_GLOBAL              0 (K)
+             12 COMPARE_OP               3 (!=)
+             14 POP_JUMP_IF_FALSE        2 (to 4)
+             16 LOAD_FAST                1 (ele)
+             18 LIST_APPEND              2
+             20 JUMP_ABSOLUTE            2 (to 4)
+        >>   22 RETURN_VALUE
